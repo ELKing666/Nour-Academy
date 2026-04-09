@@ -30,7 +30,7 @@ app.listen(port, (err) => {
         logger.info("Database migrations applied");
       })
       .catch((err) => {
-        logger.warn({ err: err.message }, "Migrations step failed (tables may already exist) — continuing");
+        logger.warn({ err }, "Migrations step failed (tables may already exist) — continuing");
       })
       .then(() => runSeed())
       .then(() => {
