@@ -2,27 +2,25 @@ import app from "./app";
 import { logger } from "./lib/logger";
 import { runSeed } from "./seed";
 
-const rawPort = process.env["PORT"];
+const port = Number(process.env["PORT"] ?? 3000);
 
-if (!rawPort) {
-  throw new Error(
-    "PORT environment variable is required but was not provided.",
-  );
-}
+app.listen(port, (err) => {
+  if (err) {
+    logger.error({ err }, "Error listening on port");
+    process.exit(1);
+  }
 
-const port = Number(rawPort);
+  logger.info({ port }, "Server listening");
 
-if (Number.isNaN(port) || port <= 0) {
-  throw new Error(`Invalid PORT value: "${rawPort}"`);
-}
-
-runSeed().then(() => {
-  app.listen(port, (err) => {
-    if (err) {
-      logger.error({ err }, "Error listening on port");
-      process.exit(1);
-    }
-
-    logger.info({ port }, "Server listening");
-  });
+  if (process.env.DATABASE_URL) {
+    runSeed()
+      .then(() => {
+        logger.info("Database seed complete");
+      })
+      .catch((err) => {
+        logger.error({ err }, "Database seed failed — server still running");
+      });
+  } else {
+    logger.warn("DATABASE_URL not set — skipping seed");
+  }
 });
