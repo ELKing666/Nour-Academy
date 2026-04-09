@@ -1,0 +1,35 @@
+  at async <anonymous> (/app/node_modules/.pnpm/drizzle-orm@0.45.1_@types+pg@8.18.0_pg@8.20.0/node_modules/src/node-postgres/session.ts:161:13)
+      at async NodePgPreparedQuery.queryWithCache (/app/node_modules/.pnpm/drizzle-orm@0.45.1_@types+pg@8.18.0_pg@8.20.0/node_modules/src/pg-core/session.ts:71:12)
+Seed error (non-fatal): _DrizzleQueryError: Failed query: select "id", "title", "description", "price", "duration", "image_url", "icon", "category", "is_featured", "sort_order", "badge", "stats", "topics", "for_whom", "created_at", "updated_at" from "courses" where "courses"."id" = $1
+params: bac
+    at NodePgPreparedQuery.queryWithCache (/app/node_modules/.pnpm/drizzle-orm@0.45.1_@types+pg@8.18.0_pg@8.20.0/node_modules/src/pg-core/session.ts:73:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async <anonymous> (/app/node_modules/.pnpm/drizzle-orm@0.45.1_@types+pg@8.18.0_pg@8.20.0/node_modules/src/node-postgres/session.ts:154:19)
+    at async runSeed (/app/artifacts/api-server/src/seed.ts:237:26) {
+  query: 'select "id", "title", "description", "price", "duration", "image_url", "icon", "category", "is_featured", "sort_order", "badge", "stats", "topics", "for_whom", "created_at", "updated_at" from "courses" where "courses"."id" = $1',
+  params: [ 'bac' ],
+  cause: error: column "badge" does not exist
+      at <anonymous> (/app/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async <anonymous> (/app/node_modules/.pnpm/drizzle-orm@0.45.1_@types+pg@8.18.0_pg@8.20.0/node_modules/src/node-postgres/session.ts:154:19)
+      at async runSeed (/app/artifacts/api-server/src/seed.ts:237:26) {
+    length: 106,
+    severity: 'ERROR',
+Database seed complete
+    code: '42703',
+    detail: undefined,
+    internalPosition: undefined,
+    hint: undefined,
+    position: '121',
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'parse_relation.c',
+    line: '3822',
+    routine: 'errorMissingColumn'
+  }
+}
