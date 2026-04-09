@@ -1,0 +1,37 @@
+uploads = []
+
+[[generated]]
+id = "_cj4XJ7rQkq80JeIyRnoG"
+uri = "file://artifacts/nour-academy/public/course-bac.png"
+type = "image"
+title = "bac prep classroom students Algeria"
+
+[[generated]]
+id = "VYK1R2pZjrh1pPEKDlodC"
+uri = "file://artifacts/nour-academy/public/course-english.png"
+type = "image"
+title = "English language learning classroom"
+
+[[generated]]
+id = "zxB8-8S4kGI9liP4_i_-L"
+uri = "file://artifacts/nour-academy/public/course-robotics.png"
+type = "image"
+title = "kids robotics coding STEM lab"
+
+[[outputs]]
+id = "rwtP2H40mroLBtD6ERIFS"
+uri = "file://nour-academy-project.tar.gz"
+type = "unspecified"
+title = "نور أكاديمي — Full Project"
+
+[[outputs]]
+id = "hAjb_qchuw3SsjTCjmeef"
+uri = "file://nour-academy-full.tar.gz"
+type = "unspecified"
+title = "نور أكاديمي — Full Project (57MB)"
+
+[[outputs]]
+id = "wdXcT85K8XRq3tyh10tsC"
+uri = "file://nour-academy-export.tar.gz"
+type = "unspecified"
+title = "Nour Academy - Full Project Export (46MB)"
